@@ -6,6 +6,12 @@
   --text: #1f2403;
 }
 
+:root[data-theme='dark'] {
+  --background-primary: #132221;
+  --background-secondary: #476462;
+  --text: #e1e1e1;
+}
+
 /* ZÁKLADNÍ STYLY */
 
 *,
@@ -184,8 +190,69 @@ span {
 }
 
 /* SEM ZAČNĚTE PSÁT SVÉ STYLY PRO MOBIL */
+@media (min-width: 380px) {
+  body {
+    font-family: 'Alegreya Sans';
+    color: var(--text); 
+    background-color: var(--background-primary);
+   
+  }
+}
+
+header,
+.pitch,
+.footer,
+.pricelist {
+  background-color: var(--background-secondary);
+}
+
+.navlink {
+  color: var(--text); 
+  
+}
+
+.logo {
+  font-family: 'Dawning of a New Day', cursive;
+}
+
+.page-header{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  text-align: center;
+}
+
+p {
+  font-family: 'Lora', serif ;
+  text-align: center;
+}
+
+.intro-image {
+  background-image: url(./images/arnica-intro.jpg);
+  width: 100%;
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.offer {
+  width: 80%;
+  max-width: 270px;
+}
+
+.review__text {
+  font-style: oblique;
+}
+
+.review__content {
+  border: 2px solid;
+  border-color: var(--background-secondary);
+}
+
 
 @media (min-width: 840px) {
+/* BODY */
+
   /* HLAVIČKA - NAVIGACE */
   .page-header {
     padding: 2rem 4rem;
@@ -213,12 +280,56 @@ span {
     font-size: 1.75rem;
   }
 
+  /* PRICELIST*/
+  .pricelist__content {
+   flex-direction: row-reverse;
+   justify-content: space-between;
+  }
+
+  .offer {
+    max-width: 220px;
+  }
+
   /* RECENZE */
+
+  .review__content {
+    border: none;
+  }
 
   .review__text {
     width: 250px;
     padding: 1.5rem;
+    height: 40vh;
+    background-color: var(--background-secondary);
   }
 
+  .review__photo {
+    background-image: url(./images/reviewer.jpg);
+    width: 30vw;
+    min-width: 400px;
+    height: 60vh;
+    background-position: center;
+    background-size: cover;
+  }
+
+  /* Footer */
+
+  .footer {
+    flex-direction: row;
+    justify-items: center;
+    gap: 3rem;
+  }
+}
+
   /* TADY PIŠTE STYLY PRO ŠÍŘKU NAD 800PX */
+@media (min-width: 1200px) {
+
+  .pricelist__content {
+    gap: 6rem;
+    justify-content: space-evenly;
+  }
+
+  .footer {
+    gap: 6rem;
+  }
 }
